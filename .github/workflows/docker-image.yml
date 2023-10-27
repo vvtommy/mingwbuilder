@@ -32,7 +32,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args:
-            # see: https://github.com/microsoft/vscode-dev-containers/blob/main/containers/go/.devcontainer/Dockerfile
-            - VARIANT=1.18-bullseye
-            - NODE_VERSION=lts/gallium
