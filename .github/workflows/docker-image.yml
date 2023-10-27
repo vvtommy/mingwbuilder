@@ -19,13 +19,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
-        with:
-          images: ghcr.io/vvtommy/secprintwinbuilder:latest
-
       - name: Build and push Docker image
         run: |
-          docker build --pull --rm -f "Dockerfile" -t ghcr.io/vvtommy/secprintwinbuilder:${{ steps.meta.outputs.tags }} "."
-          docker push ghcr.io/vvtommy/secprintwinbuilder:${{ steps.meta.outputs.tags }}
+          docker build --pull --rm -f "Dockerfile" -t ghcr.io/vvtommy/secprintwinbuilder:latest "."
+          docker push ghcr.io/vvtommy/secprintwinbuilder:latest
