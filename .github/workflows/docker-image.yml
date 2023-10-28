@@ -16,10 +16,10 @@ jobs:
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: vvtommy
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: create image from repository
-        run: docker build -t ghcr.io/${{ github.actor }}/secprintwinbuilder:latest .
+        run: docker build -t ghcr.io/vvtommy/secprintwinbuilder:latest .
       - name: push image to GitHub Container Registry
-        run: docker push ghcr.io/${{ github.actor }}/secprintwinbuilder:latest
+        run: docker push ghcr.io/vvtommy/secprintwinbuilder:latest
